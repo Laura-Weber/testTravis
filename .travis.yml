@@ -23,3 +23,7 @@ cache:
 install:
 - npm install
 - npm install -g @angular/cli
+
+scripts:
+- yarn lint
+- yarn build --base-href https://Laura-Weber.github.io/testTravis/
