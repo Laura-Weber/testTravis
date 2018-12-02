@@ -19,6 +19,10 @@ install:
 - npm install
 - npm install -g @angular/cli
 
+before_script:
+    - "sudo chown root /opt/google/chrome/chrome-sandbox"
+    - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+
 scripts:
   - yarn lint
   - yarn build --base-href https://Laura-Weber.github.io/testTravis/
