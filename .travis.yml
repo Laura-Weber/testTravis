@@ -24,5 +24,4 @@ before_script:
     - "sh -e /etc/init.d/xvfb start"
 
 scripts:
-  - yarn lint
   - yarn build --base-href https://Laura-Weber.github.io/testTravis/
