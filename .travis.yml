@@ -1,5 +1,5 @@
 language: node_js
-sudo: false
+sudo: required
 dist: trusty
 node_js:
   - '10.13.0'
@@ -20,6 +20,8 @@ install:
 - npm install -g @angular/cli
 
 before_script:
+- "sudo chown root /opt/google/chrome/chrome-sandbox"
+- "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 - wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
 - unzip chromedriver_linux64.zip -d ~/
 - export CHROME_BIN=chromium-browser
