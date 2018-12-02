@@ -27,6 +27,7 @@ before_script:
     - sleep 3 # give Web server some time to bind to sockets, etc
 
 scripts:
+  - phantomjs testrunner.js
   - yarn lint
   - yarn build --base-href https://Laura-Weber.github.io/testTravis/
   - yarn start dev:watch 
