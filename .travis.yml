@@ -1,31 +1,4 @@
 language: node_js
-sudo: required
-dist: trusty
 node_js:
   - '10.13.0'
 
-branches:
-  only:
-    - master
-
-addons:
-  chrome: stable
-    
-cache:
-  directories:
-  - node_modules
-
-install:
-- npm install
-- npm install -g @angular/cli
-
-before_script:
-    - "export DISPLAY=:99.0"
-    - "sh -e /etc/init.d/xvfb start"
-    - sleep 3 # give xvfb some time to start
-
-scripts:
-  - phantomjs testrunner.js
-  - yarn lint
-  - yarn build --base-href https://Laura-Weber.github.io/testTravis/
-  - yarn start dev:watch 
