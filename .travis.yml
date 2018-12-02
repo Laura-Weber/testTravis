@@ -20,12 +20,15 @@ install:
 - npm install -g @angular/cli
 
 before_script:
-- "sudo chown root /opt/google/chrome/chrome-sandbox"
-- "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
-- wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
-- unzip chromedriver_linux64.zip -d ~/
-- export CHROME_BIN=chromium-browser
+  - wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/
+  - unzip ~/chromedriver_linux64.zip -d ~/
+  - rm ~/chromedriver_linux64.zip
+  - sudo mv -f ~/chromedriver /usr/local/share/
+  - sudo chmod +x /usr/local/share/chromedriver
+  - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 
 scripts:
-- yarn lint
-- yarn build --base-href https://Laura-Weber.github.io/testTravis/
+  - whereis google-chrome-stable
+  - whereis chromedriver
+  - yarn lint
+  - yarn build --base-href https://Laura-Weber.github.io/testTravis/
