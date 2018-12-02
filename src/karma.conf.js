@@ -7,7 +7,7 @@ module.exports = function (config) {
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-phantomjs-launcher'),
+      require('phantomjs-prebuilt'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
@@ -27,7 +27,7 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['PhantomJS'],
       customLaunchers: {
-          PhantomJSNoSandbox: {
+          ChromeNoSandbox: {
               base: 'PhantomJS',
               flags: ['--no-sandbox']
           }
