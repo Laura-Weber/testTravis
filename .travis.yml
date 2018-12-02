@@ -7,9 +7,6 @@ node_js:
 branches:
   only:
     - master
-
-addons:
-  chrome: stable
     
 cache:
   directories:
