@@ -50,6 +50,7 @@
 			<argument>scripts/launch.sh</argument>
 		  </arguments>
 		</configuration>
+      </plugin>
     </plugins>
   </build>
 
